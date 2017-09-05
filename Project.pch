@@ -1,7 +1,7 @@
 //
 //  Project.pch
 //  Project
-//  $(SRCROOT)/Project/Project.pch
+//  prefix header $(SRCROOT)/Project/Project.pch
 //  Created by 赵云鹏 on 2017/9/5.
 //  Copyright © 2017年 zhaoyunpeng. All rights reserved.
 //
