@@ -61,8 +61,53 @@ $(SRCROOT)/Project/Project.pch
 
 
 
-## Myself common
+## common pod use
 
-* [HomeView instruction](https://github.com/SilverBulletZyp/ZYP_HomeViewController)
 
+* [Myself HomeView instruction](https://github.com/SilverBulletZyp/ZYP_HomeViewController)
+
+
+* [Masonry]()
+
+
+```
+//#define MAS_SHORTHAND
+//#define MAS_SHORTHAND_GLOBALS
+#import "Masonry.h"
+```
+
+* [iConsole](https://github.com/nicklockwood/iConsole)
+
+
+```objective-c
+// AppDelegate.h - 同时添加 iConsoleDelegate
+@property (strong, nonatomic) iConsoleWindow *window;
+// didFinishLaunchingWithOptions
+_window = [[iConsoleWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+[iConsole sharedConsole].delegate = self;
+[iConsole sharedConsole].logSubmissionEmail = @"xxx@126.com";
+// 协议方法
+- (void)handleConsoleCommand:(NSString *)command
+{
+  if ([command isEqualToString:@"version"])
+   {
+         [iConsole info:@"%@ version %@",
+         [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"],
+         [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]];
+    }
+    else
+    {
+         [iConsole error:@"unrecognised command, try 'version' instead"];
+    }
+}
+// import
+#import "iConsole.h"
+// 主动调用
+[iConsole show];
+// 三跟手指由下往上滑动. 模拟器两根手指, 默认启动
+[iConsole sharedConsole].simulatorTouchesToShow = YES;  
+[iConsole sharedConsole].deviceTouchesToShow = YES;
+// 摇动手机启动 默认禁用
+[iConsole sharedConsole].deviceShakeToShow = YES;
+```
 

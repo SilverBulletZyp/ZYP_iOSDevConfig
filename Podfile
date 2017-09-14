@@ -30,6 +30,7 @@ pod 'Masonry' # 轻量级布局框架
 # pod 'KVOController' # KVO监听
 
 ## Debug ##
-pod 'CocoaLumberjack' # DDLog
+# pod 'CocoaLumberjack' # DDLog
+pod 'iConsole' # debug显示于界面内
 
 end
