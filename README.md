@@ -109,5 +109,6 @@ _window = [[iConsoleWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 [iConsole sharedConsole].deviceTouchesToShow = YES;
 // 摇动手机启动 默认禁用
 [iConsole sharedConsole].deviceShakeToShow = YES;
+// [iConsole info:@"记录"];
 ```
 
